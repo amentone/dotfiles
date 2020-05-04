@@ -12,22 +12,34 @@ else
 	token=$1
 	VS_config=~/.config/VSCodium/User
 	gistconf=gist.conf
+	syncconf=syncLocalSettings.json
 
-	if [ -f $VS_config/settings.json ]; then
-		echo "$VS_config/settings.json: OK"
-		if [ -f $syncconf ]; then
-			echo "$syncconf: OK"
-			sed -i "/token/c \"token\":\"$token\"," $syncconf/syncLocalSettings.json
-			echo "VSCodium: sync settings imported!"
+	if [ ! -f $VS_config/settings.json ]; then
+		echo -e "{\n}" > $VS_config/settings.json
+	fi
+	echo "$VS_config/settings.json: OK"
+	
+	
+	if [ -f $syncconf ]; then
+		cp $syncconf $VS_config/
+		echo "$syncconf: OK"
+	else 
+		echo "Error: $syncconf doesn't exist!"
+		if [ ! -f $VS_config/syncLocalSettings.json ]; then
+			echo "Error: $VS_config/syncLocalSettings.json doesn't exist!"
+			exit 1
 		fi
-		if [ -f $gistconf ]; then
-			echo "$gistconf: OK"
-			sed -i -e "/{/r $gistconf" $VS_config/settings.json
-			echo "VSCodium: gist settings imported!"
-		else
-			echo "Check if $gistconf exists and the read permission is granted!"
-		fi
+	fi
+
+	sed -i "/token/c \"token\":\"$token\"," $VS_config/syncLocalSettings.json
+	echo "VSCodium: sync settings imported!"
+
+	if [ -f $gistconf ]; then
+		echo "$gistconf: OK"
+		sed -i -e "/{/r $gistconf" $VS_config/settings.json
+		echo "VSCodium: gist settings imported!"
 	else
-		echo "Check if $VS_config/settings.json exists and the read permission is granted!"
+		echo "Check if $gistconf exists and the read permission is granted!"
+		exit 1
 	fi
 fi
