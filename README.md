@@ -5,7 +5,7 @@ My system customization
 Gnome configuration is handling by [dconf](https://wiki.gnome.org/Projects/dconf). 
 ```bash
 $ ./dump.sh #IMPORTANT: is better run this first in order to get a backup of your current configuration.
-$ ./install.sh gnome_settings #or gnome_settings.backup if you want to restore previous configuration. 
+$ ./load.sh gnome_settings #or gnome_settings.backup if you want to restore previous configuration. 
 ```
 
 #### Hyper
