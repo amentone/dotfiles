@@ -1,5 +1,10 @@
-hyper i hyper-search 
-hyper i hyper-highlight-active-pane
-hyper i hyper-fading-scrollbar
-hyper i hyper-opacity
-ln -s -f -v /home/mentos/github/dotfiles/hyper/hyper.js.link /home/mentos/.hyper.js
+if ! type hyper > /dev/null; then
+	echo "Hyper.js: command not found, check if the program has been installed!"
+else
+	hyper i hyper-search 
+	hyper i hyper-highlight-active-pane
+	hyper i hyper-fading-scrollbar
+	ln -s -f -v $PWD/hyper.js.link $HOME/.hyper.js
+	echo "Import completed!"
+fi
+

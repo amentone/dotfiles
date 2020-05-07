@@ -4,15 +4,14 @@
 
 module.exports = {
   config: {
-   //opacity: 0.5, 
-   hyperSearchUI: {
+    hyperSearchUI: {
 	inputBorderRadius: 3,
 	buttonBorderRadius: 3,
 	prevButton: '←',
 	nextButton: '→',
     },
     MaterialTheme: {
-	theme: '',
+	theme: 'Darker',
 	backgroundOpacity: '1',
 	accentColor: '#bada55'
     },
@@ -154,6 +153,7 @@ module.exports = {
 
     // for advanced config flags please refer to https://hyper.is/#cfg
   },
+   
 
   // a list of plugins to fetch and install from npm
   // format: [@org/]project[#version]
@@ -165,7 +165,7 @@ module.exports = {
     "hyper-search",
     "hyper-material-theme",
     "hyper-highlight-active-pane",
-    "hyper-fading-scrollbar"
+    "hyper-fading-scrollbar",
   ],
 
   // in development, you can create a directory under
