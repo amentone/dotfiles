@@ -8,11 +8,17 @@ version='1.5.22'
 
 [io/elementary/appcenter/settings]
 window-maximized=false
-window-position=(1158, 945)
-window-size=(1100, 660)
+window-position=(85, 232)
+window-size=(946, 1100)
+
+[org/gnome/GWeather]
+temperature-unit='centigrade'
+
+[org/gnome/Weather]
+locations=[<(uint32 2, <('Donaueschingen / Villingen', 'EDTD', false, [(0.83717627035771092, 0.1486438804459479)], @a(dd) [])>)>]
 
 [org/gnome/control-center]
-last-panel='display'
+last-panel='firmware'
 
 [org/gnome/desktop/app-folders/folders/Pop-Office]
 apps=['libreoffice-calc.desktop', 'libreoffice-draw.desktop', 'libreoffice-impress.desktop', 'libreoffice-math.desktop', 'libreoffice-startcenter.desktop', 'libreoffice-writer.desktop']
@@ -29,10 +35,13 @@ apps=['com.github.donadigo.eddy.desktop', 'com.system76.Popsicle.desktop', 'guch
 name='Utilities'
 translate=true
 
+[org/gnome/desktop/applications/terminal]
+exec='hyper'
+
 [org/gnome/desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///usr/share/backgrounds/pop/nick-nazzaro-space-blue.png'
+picture-uri='file:///usr/share/backgrounds/pop/kate-hazen-fractal-mountains.png'
 primary-color='#000000'
 secondary-color='#000000'
 
@@ -42,11 +51,16 @@ sources=[('xkb', 'gb+extd')]
 xkb-options=@as []
 
 [org/gnome/desktop/interface]
+clock-show-date=false
+enable-hot-corners=true
+gtk-enable-primary-paste=true
 gtk-im-module='gtk-im-context-simple'
 gtk-theme='Pop'
+locate-pointer=true
+show-battery-percentage=true
 
 [org/gnome/desktop/notifications]
-application-children=['gnome-control-center', 'firefox', 'telegramdesktop', 'gnome-power-panel']
+application-children=['gnome-control-center', 'firefox', 'telegramdesktop', 'gnome-power-panel', 'io-elementary-appcenter', 'jetbrains-studio', 'org-gnome-nautilus', 'org-glimpse-editor-glimpse']
 show-banners=true
 
 [org/gnome/desktop/notifications/application/firefox]
@@ -58,6 +72,18 @@ application-id='gnome-control-center.desktop'
 [org/gnome/desktop/notifications/application/gnome-power-panel]
 application-id='gnome-power-panel.desktop'
 
+[org/gnome/desktop/notifications/application/io-elementary-appcenter]
+application-id='io.elementary.appcenter.desktop'
+
+[org/gnome/desktop/notifications/application/jetbrains-studio]
+application-id='jetbrains-studio.desktop'
+
+[org/gnome/desktop/notifications/application/org-glimpse-editor-glimpse]
+application-id='org.glimpse_editor.Glimpse.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-nautilus]
+application-id='org.gnome.Nautilus.desktop'
+
 [org/gnome/desktop/notifications/application/telegramdesktop]
 application-id='telegramdesktop.desktop'
 
@@ -68,9 +94,16 @@ report-technical-problems=true
 [org/gnome/desktop/screensaver]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///usr/share/backgrounds/pop/nick-nazzaro-space-blue.png'
+picture-uri='file:///usr/share/backgrounds/pop/kate-hazen-fractal-mountains.png'
 primary-color='#000000'
 secondary-color='#000000'
+
+[org/gnome/desktop/sound]
+allow-volume-above-100-percent=true
+
+[org/gnome/desktop/wm/preferences]
+button-layout='appmenu:minimize,maximize,close'
+focus-mode='sloppy'
 
 [org/gnome/evolution-data-server]
 migrated=true
@@ -78,6 +111,13 @@ network-monitor-gio-name=''
 
 [org/gnome/gedit/preferences/editor]
 scheme='pop-light'
+
+[org/gnome/gnome-screenshot]
+border-effect='none'
+delay=0
+include-border=true
+include-pointer=false
+last-save-directory='file:///home/mentos/Pictures'
 
 [org/gnome/mutter]
 workspaces-only-on-primary=true
@@ -87,14 +127,89 @@ default-folder-viewer='icon-view'
 search-filter-time-type='last_modified'
 
 [org/gnome/nautilus/window-state]
-maximized=true
+initial-size=(890, 550)
+maximized=false
 
 [org/gnome/settings-daemon/plugins/color]
-night-light-last-coordinates=(48.133898560115192, 7.8479999999999999)
+night-light-last-coordinates=(48.124899280057598, 7.8479999999999999)
+
+[org/gnome/settings-daemon/plugins/xsettings]
+antialiasing='rgba'
+hinting='slight'
 
 [org/gnome/shell]
-favorite-apps=['firefox.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop', 'io.elementary.appcenter.desktop', 'codium.desktop']
-had-bluetooth-devices-setup=false
+disable-user-extensions=false
+disabled-extensions=@as []
+enabled-extensions=['alt-tab-raise-first-window@system76.com', 'always-show-workspaces@system76.com', 'batteryiconfix@kylecorry31.github.io', 'desktop-icons@csoriano', 'pop-shell@system76.com', 'pop-shop-details@system76.com', 'system76-power@system76.com', 'ubuntu-appindicators@ubuntu.com', 'dash-to-panel@jderose9.github.com']
+favorite-apps=['firefox.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop', 'io.elementary.appcenter.desktop', 'codium.desktop', 'telegramdesktop.desktop', 'hyper.desktop']
+had-bluetooth-devices-setup=true
+
+[org/gnome/shell/extensions/dash-to-panel]
+animate-show-apps=true
+appicon-margin=0
+appicon-padding=4
+click-action='CYCLE-MIN'
+dot-color-1='#5294e2'
+dot-color-2='#5294e2'
+dot-color-3='#5294e2'
+dot-color-4='#5294e2'
+dot-color-dominant=false
+dot-color-override=false
+dot-color-unfocused-1='#5294e2'
+dot-color-unfocused-2='#5294e2'
+dot-color-unfocused-3='#5294e2'
+dot-color-unfocused-4='#5294e2'
+dot-position='BOTTOM'
+dot-style-focused='METRO'
+dot-style-unfocused='DASHES'
+focus-highlight=true
+focus-highlight-color='#d3d7cf'
+focus-highlight-dominant=true
+focus-highlight-opacity=50
+force-check-update=false
+group-apps=true
+group-apps-label-font-color='#dddddd'
+hot-keys=false
+hotkeys-overlay-combo='TEMPORARILY'
+intellihide=true
+intellihide-animation-time=150
+intellihide-behaviour='FOCUSED_WINDOWS'
+intellihide-hide-from-windows=true
+intellihide-key-toggle=['<Super>i']
+intellihide-key-toggle-text='<Super>i'
+intellihide-only-secondary=false
+intellihide-show-in-fullscreen=false
+intellihide-use-pressure=false
+isolate-monitors=true
+isolate-workspaces=false
+location-clock='STATUSLEFT'
+multi-monitors=true
+panel-position='BOTTOM'
+panel-size=48
+primary-monitor=-1
+show-activities-button=false
+show-appmenu=false
+show-apps-icon-file=''
+show-clock-all-monitors=false
+show-favorites-all-monitors=false
+show-show-apps-button=false
+show-showdesktop-button=true
+show-status-menu-all-monitors=false
+show-tooltip=true
+show-window-previews=true
+stockgs-force-hotcorner=false
+stockgs-keep-dash=false
+stockgs-panelbtn-click-only=false
+taskbar-position='LEFTPANEL'
+trans-panel-opacity=0.29999999999999999
+trans-use-custom-bg=false
+trans-use-custom-gradient=false
+trans-use-custom-opacity=true
+trans-use-dynamic-opacity=true
+
+[org/gnome/shell/weather]
+automatic-location=true
+locations=[<(uint32 2, <('Donaueschingen / Villingen', 'EDTD', false, [(0.83717627035771092, 0.1486438804459479)], @a(dd) [])>)>]
 
 [org/gnome/system/location]
 enabled=true
@@ -105,10 +220,10 @@ location-mode='path-bar'
 show-hidden=false
 show-size-column=true
 show-type-column=true
-sidebar-width=150
+sidebar-width=158
 sort-column='name'
 sort-directories-first=true
-sort-order='ascending'
+sort-order='descending'
 type-format='category'
-window-position=(476, 112)
+window-position=(1106, 814)
 window-size=(1096, 822)
