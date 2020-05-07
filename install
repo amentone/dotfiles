@@ -1,4 +1,0 @@
-GNOME="tweaks"
-SYSTEM="meld"
-
-sudo apt install $GNOME $SYSTEM
