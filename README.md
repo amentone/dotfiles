@@ -9,7 +9,7 @@ $ ./install.sh gnome_settings #or gnome_settings.backup if you want to restore p
 ```
 
 #### Hyper
-![](.readme/hyper.png)
+![](.readme/hyper.gif)
 In order to import my custom Hyper settings (as keywords, theme, plugins) is enough run in **dotfiles/hyper**:
 ```bash
 $ ./import.sh
